@@ -38,10 +38,11 @@ The project focuses on:
 Customer-Shopping-Behavior-Analysis/
 │
 ├── data/
-│   └── raw_customer_data.csv
+│   └── customer_shopping_behavior.csv
 │
 ├── notebooks/
-│   └── customer_shopping_analysis.ipynb
+│   ├── cleaning_data.ipynb
+│   └── visualization.ipynb
 │
 ├── sql/
 │   └── customer_behavior_queries.sql
@@ -218,10 +219,11 @@ pip install -r requirements.txt
 
 ### 3. Run the Jupyter Notebook
 
-Open the notebook:
+Open the notebooks:
 
 ```
-notebooks/customer_shopping_analysis.ipynb
+notebooks/cleaning_data.ipynb
+notebooks/visualization.ipynb
 ```
 
 This notebook contains:
