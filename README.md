@@ -1,14 +1,20 @@
-# 🛍️ Customer Shopping Behavior Analysis
+`# 🛍️ Customer Shopping Behavior Analysis
 
-A complete **Data Analyst Portfolio Project** focused on analyzing customer shopping behavior using **Python, MySQL, SQL, Pandas, NumPy, and Matplotlib**.
+A complete **Data Analyst Portfolio Project** focused on analyzing customer shopping behavior using **Python, MySQL, SQL, Pandas, NumPy, Matplotlib, SQLAlchemy, PyMySQL, and python-dotenv**.
 
 This project follows an end-to-end data analytics workflow, starting from raw data cleaning and exploratory analysis to SQL-based business analysis and insight generation.
+
+Database credentials are handled securely using a local `.env` file and are not stored directly inside the source code.
+
+---
 
 ## 📌 Project Overview
 
 The main objective of this project is to analyze customer shopping data and understand important business patterns such as product performance, customer preferences, purchase behavior, and revenue trends.
 
 This project demonstrates how a data analyst works with raw data, prepares it for analysis, stores it in a database, writes SQL queries, and converts the results into meaningful business insights.
+
+---
 
 ## 🎯 Project Objectives
 
@@ -21,20 +27,28 @@ The project focuses on:
 - Writing SQL queries to answer business questions
 - Identifying customer behavior and purchase trends
 - Presenting insights in simple business language
+- Managing database credentials securely using environment variables
+
+---
 
 ## 🛠️ Tools & Technologies Used
 
-| Category              | Tools                      |
-| ---------------------- | -------------------------- |
-| Programming Language  | Python                     |
-| Libraries              | Pandas, NumPy, Matplotlib  |
-| Database               | MySQL                      |
-| Query Language         | SQL                        |
-| IDE / Editor           | VS Code, Jupyter Notebook  |
+| Category | Tools |
+|---|---|
+| Programming Language | Python |
+| Libraries | Pandas, NumPy, Matplotlib |
+| Database | MySQL |
+| Query Language | SQL |
+| Python Database Tools | SQLAlchemy, PyMySQL |
+| Security / Configuration | python-dotenv, `.env` |
+| Version Control | Git, GitHub |
+| IDE / Editor | VS Code, Jupyter Notebook |
+
+---
 
 ## 📂 Project Structure
 
-```
+```text
 Customer-Shopping-Behavior-Analysis/
 │
 ├── data/
@@ -53,20 +67,21 @@ Customer-Shopping-Behavior-Analysis/
 │   └── chart_standard_vs_express_shipping.png
 │
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
-*Note: Folder and file names can be updated based on the actual project structure.*
+---
 
 ## 📊 Dataset Information
 
-| Detail          | Information                                  |
-| ---------------- | --------------------------------------------- |
-| Dataset Name     | Customer Shopping Trends Dataset              |
-| Dataset Source   | Kaggle                                        |
-| Records          | 3,900 rows                                    |
-| Columns          | 18 columns                                    |
-| Dataset Type     | Retail / Customer Shopping Behavior Dataset   |
+| Detail | Information |
+|---|---|
+| Dataset Name | Customer Shopping Trends Dataset |
+| Dataset Source | Kaggle |
+| Records | 3,900 rows |
+| Columns | 18 columns |
+| Dataset Type | Retail / Customer Shopping Behavior Dataset |
 
 This dataset contains customer shopping behavior information such as customer demographics, purchased items, product categories, purchase amount, location, season, review rating, subscription status, discount usage, promo code usage, previous purchases, payment method, and frequency of purchases.
 
@@ -92,6 +107,8 @@ This dataset contains customer shopping behavior information such as customer de
 - Preferred Payment Method
 - Frequency of Purchases
 
+---
+
 ## 🧹 Data Cleaning & EDA
 
 Data cleaning and Exploratory Data Analysis were performed using **Python** in Jupyter Notebook.
@@ -109,14 +126,20 @@ Data cleaning and Exploratory Data Analysis were performed using **Python** in J
 - Created basic visualizations using Matplotlib
 - Prepared the cleaned dataset for SQL analysis
 
+---
+
 ## 🗄️ Database Storage
 
 After cleaning the dataset, the final data was loaded into a **MySQL database**.
 
 This step helped simulate a real business environment where analysts work with structured databases and use SQL to extract insights.
 
-**Database Name:** `customer_behaviour`
+**Database Name:** `customer_behaviour`  
 **Table Name:** `customer_shopping`
+
+Database connection details are loaded from a local `.env` file using `python-dotenv`.
+
+---
 
 ## 💻 SQL Business Analysis
 
@@ -124,18 +147,20 @@ SQL was used to answer business-related questions and extract useful insights fr
 
 ### SQL Concepts Used
 
-- SELECT
-- WHERE
-- GROUP BY
-- ORDER BY
+- `SELECT`
+- `WHERE`
+- `GROUP BY`
+- `ORDER BY`
 - Aggregate functions
 - Subqueries
-- CASE statements
+- `CASE` statements
 - Common Table Expressions
 - Window functions
 - Ranking
 - Filtering and sorting
 - Business-based analysis
+
+---
 
 ## 🔍 Business Questions Answered
 
@@ -152,6 +177,8 @@ This project answers the following business questions using SQL:
 9. Are repeat buyers more likely to subscribe?
 10. What is the revenue generated by each age group?
 
+---
+
 ## 📈 Key Insights
 
 - **Male customers generated higher total revenue** compared to female customers. Male customers contributed **$157,890**, while female customers contributed **$75,191** in total purchase amount.
@@ -164,6 +191,8 @@ This project answers the following business questions using SQL:
 - In category-wise product performance, top products included **Jewelry, Belt, and Sunglasses** in Accessories; **Blouse, Pants, and Shirt** in Clothing; **Sandals, Shoes, and Sneakers** in Footwear; and **Jacket and Coat** in Outerwear.
 - Among repeat buyers with more than 5 previous purchases, **2,518 customers were not subscribed**, while **958 customers were subscribed** — showing many repeat buyers are still not converted into subscribers.
 - The **46-55 age group generated the highest revenue**, with a total purchase amount of **$45,619**.
+
+---
 
 ## 📊 Visualizations
 
@@ -179,9 +208,11 @@ Matplotlib was used to create simple and clear visualizations for understanding 
 - Gender-wise purchase behavior
 - Standard vs Express shipping — average purchase comparison
 
+---
+
 ## 📸 Screenshots
 
-**SQL Query — Average purchase amount by shipping type**
+### SQL Query — Average Purchase Amount by Shipping Type
 
 ```sql
 SELECT
@@ -194,13 +225,15 @@ GROUP BY shipping_type;
 
 ![SQL Query](screenshots/sql_query_shipping_type.png)
 
-**Query Result**
+### Query Result
 
 ![SQL Result](screenshots/sql_result_shipping_type.png)
 
-**Matplotlib Chart — Standard vs Express Shipping**
+### Matplotlib Chart — Standard vs Express Shipping
 
 ![Standard vs Express Shipping Chart](screenshots/chart_standard_vs_express_shipping.png)
+
+---
 
 ## ⚙️ How to Run This Project
 
@@ -211,45 +244,90 @@ git clone https://github.com/silentharxx/Customer-Shopping-Behavior-Analysis.git
 cd Customer-Shopping-Behavior-Analysis
 ```
 
-### 2. Install Required Libraries
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the Virtual Environment
+
+For Windows PowerShell:
+
+```bash
+.venv\Scripts\Activate.ps1
+```
+
+If PowerShell blocks activation, run:
+
+```bash
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+.venv\Scripts\Activate.ps1
+```
+
+### 4. Install Required Libraries
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Jupyter Notebook
+---
 
-Open the notebooks:
+## 🔐 Environment Variables Setup
 
-```
-notebooks/cleaning_data.ipynb
-notebooks/visualization.ipynb
-```
+Create a `.env` file in the project root folder and add your local MySQL credentials:
 
-This notebook contains:
-
-- Data importing
-- Data exploration
-- Data cleaning
-- Exploratory Data Analysis
-- Basic visualizations
-- Cleaned data preparation
-
-### 4. Load Data into MySQL
-
-Create a MySQL database and load the cleaned dataset into a table.
-
-Example table name: `customer_shopping`
-
-### 5. Run SQL Queries
-
-Open and run the SQL file:
-
-```
-sql/customer_behavior_queries.sql
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_PORT=3306
+DB_NAME=customer_behaviour
 ```
 
-This file contains all business analysis queries used in the project.
+> Do not upload the `.env` file to GitHub. It is already ignored using `.gitignore`.
+
+---
+
+## 🗄️ MySQL Database Setup
+
+Before loading the dataset into MySQL, create the database:
+
+```sql
+CREATE DATABASE customer_behaviour;
+```
+
+Then run the notebook cells that load the cleaned DataFrame into MySQL using SQLAlchemy.
+
+Example table name:
+
+```text
+customer_shopping
+```
+
+---
+
+## 📌 How to Use This Project
+
+After setup:
+
+- Open `notebooks/cleaning_data.ipynb` to view data importing, cleaning, and preprocessing
+- Open `notebooks/visualization.ipynb` to view visual analysis and MySQL-based analysis
+- Run queries from `sql/customer_behavior_queries.sql` in MySQL
+- Check the `screenshots/` folder for SQL results and chart outputs
+
+---
+
+## 🔐 Security Note
+
+This project does not store database credentials directly inside Python files or notebooks.
+
+- Credentials are loaded using environment variables
+- The `.env` file is ignored through `.gitignore`
+- Passwords and secrets should never be committed to GitHub
+- If a password is accidentally committed, it should be changed immediately
+
+---
 
 ## 📚 Learning Outcomes
 
@@ -260,10 +338,14 @@ Through this project, I learned how to:
 - Perform Exploratory Data Analysis
 - Create visualizations using Matplotlib
 - Store cleaned data in MySQL
+- Connect Python with MySQL using SQLAlchemy and PyMySQL
+- Use environment variables for secure database configuration
 - Write SQL queries for business analysis
 - Use CTEs and window functions in SQL
 - Convert raw data into meaningful business insights
 - Structure a data analytics project for GitHub portfolio
+
+---
 
 ## 🚀 Future Improvements
 
@@ -277,6 +359,8 @@ This project can be improved further by:
 - Automating the data cleaning process
 - Comparing customer behavior across different segments
 
+---
+
 ## 🙏 Credits
 
 This project was created as part of my data analytics learning journey.
@@ -284,6 +368,8 @@ This project was created as part of my data analytics learning journey.
 I followed a YouTube tutorial as a learning reference and then practiced data cleaning, SQL queries, and analysis independently.
 
 **Tutorial Reference:** [Customer Behavior Data Analyst Portfolio Project](https://www.youtube.com/watch?v=5PrZvPeUw60&list=PLAx-M6Di0SisFJ1rv5M_FRHUlGA5rtUf_&index=3)
+
+---
 
 ## 👤 About Me
 
@@ -295,8 +381,11 @@ I am currently learning data analytics and building portfolio projects using Pyt
 - GitHub: [github.com/silentharxx](https://github.com/silentharxx)
 - LinkedIn: [linkedin.com/in/harshit-mishra-570267377](https://www.linkedin.com/in/harshit-mishra-570267377)
 
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License.
 
 You are free to use this project as a reference for learning purposes.
+`

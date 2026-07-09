@@ -113,18 +113,3 @@ GROUP BY subscription_status;
 FROM customer_shopping 
 GROUP BY age_group 
 ORDER BY Total_revenue_by_age_group DESC;
-
-
-
-
-
-
-
-
-
-
-
-     
-    
-
-

@@ -1,6 +1,14 @@
 .venv/
-.vscode/
+venv/
+env/
 __pycache__/
 .ipynb_checkpoints/
-*.pyc
 .env
+.vscode/
+.idea/
+*.py[cod]
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
